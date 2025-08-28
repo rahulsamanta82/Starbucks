@@ -421,6 +421,7 @@ header .right-side .nav-link-wrapper a:hover::after {
 }
 
 /* ---- Mobile Dropdown ---- */
+/* ---- Mobile Dropdown ---- */
 @media only screen and (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -429,13 +430,13 @@ header .right-side .nav-link-wrapper a:hover::after {
   .nav-links {
     display: none;
     flex-direction: column;
-    background: white;
     position: absolute;
     top: 60px;
     right: 20px;
-    padding: 15px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    border-radius: 8px;
+    padding: 0;          /* remove white padding */
+    background: none;    /* ❌ removed white background */
+    box-shadow: none;    /* ❌ removed white shadow */
+    border-radius: 0;    /* no rounded box */
   }
 
   .nav-links.active {
@@ -443,8 +444,8 @@ header .right-side .nav-link-wrapper a:hover::after {
   }
 
   .nav-links a {
-    width: 90%;
-    margin: 8px auto;
-    text-align: center;
+    width: auto;
+    margin: 8px 0;
+    text-align: right;
   }
 }
