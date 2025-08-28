@@ -107,16 +107,8 @@ header .right-side .nav-link-wrapper a{
   margin: 20px;
 }
 
+/* ---------- Desktop Wide Screens ---------- */
 @media (min-width: 1140px){
-  *{
-    margin: 0px;
-    padding: 0px;
-  }
-
-  body{
-    overflow-x: hidden;
-  }
-
   header{
     display: flex;
     align-items: center;
@@ -169,7 +161,7 @@ header .right-side .nav-link-wrapper a{
   .container .left-side a{
     display: inline-block;
     background: green;
-    padding: 12px 18px 12px 18px;
+    padding: 12px 18px;
     text-decoration: none;
     border-radius: 25px;
     color: white;
@@ -222,6 +214,7 @@ header .right-side .nav-link-wrapper a{
   }
 }
 
+/* ---------- Tablet / Small Screens ---------- */
 @media only screen and (max-width: 650px){
   header{
     display: block;
@@ -233,18 +226,6 @@ header .right-side .nav-link-wrapper a{
     display: block;
   }
 
-  header .right-side{
-    display: flex;
-    justify-content: center;
-    margin-top: 35px;
-  }
-
-  header .right-side .nav-link-wrapper a{
-    padding: 10px;
-    margin: 10px;
-    text-decoration: none;
-    color: black;
-  }
   .container{
     max-width: 80%;
     margin: 50px auto;
@@ -259,11 +240,6 @@ header .right-side .nav-link-wrapper a{
     letter-spacing: 2px;
   }
 
-  .container .left-side h1 .green{
-    color: green;
-    font-family: 'Viga', serif;
-  }
-
   .container .left-side p{
     font-size: 18px;
     letter-spacing: 0.5px;
@@ -272,7 +248,7 @@ header .right-side .nav-link-wrapper a{
   .container .left-side a{
     display: inline-block;
     background: green;
-    padding: 12px 18px 12px 18px;
+    padding: 12px 18px;
     text-decoration: none;
     border-radius: 25px;
     color: white;
@@ -282,6 +258,7 @@ header .right-side .nav-link-wrapper a{
   }
 }
 
+/* ---------- Very Small Phones ---------- */
 @media only screen and (max-width: 404px){
   header{
     display: block;
@@ -293,24 +270,9 @@ header .right-side .nav-link-wrapper a{
     display: block;
   }
 
-  header .right-side{
-    display: flex;
-    justify-content: center;
-    margin-top: 35px;
-  }
-
-  header .right-side .nav-link-wrapper a{
-    padding: 5px;
-    margin: 5px;
-    text-decoration: none;
-    color: black;
-  }
-  .container .right-side img{
-    width: 330px;
-    margin-top: -30px;
-  }
   .container .right-side img{
     max-width: 50%;
+    margin-top: -30px;
   }
 
   .container .right-side .box{
@@ -335,11 +297,6 @@ header .right-side .nav-link-wrapper a{
     justify-content: center;
   }
 
-  .thumb a:hover{
-    margin-top: -15px;
-    transition: 0.2s;
-  }
-
   .thumb img{
     width: 45px;
     margin: 20px;
@@ -357,28 +314,25 @@ header .right-side .nav-link-wrapper a {
   font-weight: 600;
   text-transform: uppercase;
   color: #fff;
-  background: linear-gradient(135deg, #006241, #00a862); /* Starbucks green gradient */
+  background: linear-gradient(135deg, #006241, #00a862);
   border-radius: 30px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   transition: all 0.3s ease;
   display: inline-block;
   text-align: center;
-  white-space: nowrap; /* prevent text from breaking */
+  white-space: nowrap;
 }
 
-/* Hover effect */
 header .right-side .nav-link-wrapper a:hover {
   background: linear-gradient(135deg, #00a862, #006241);
   transform: translateY(-3px);
   box-shadow: 0 6px 14px rgba(0,0,0,0.25);
 }
 
-/* Active/Pressed effect */
 header .right-side .nav-link-wrapper a:active {
   transform: scale(0.95);
 }
 
-/* Optional underline animation */
 header .right-side .nav-link-wrapper a::after {
   content: "";
   position: absolute;
@@ -396,18 +350,18 @@ header .right-side .nav-link-wrapper a:hover::after {
   transform: translateX(-50%) scaleX(1);
 }
 
-/* ✅ Mobile adjustments */
+/* ✅ Mobile adjustments for stacked buttons */
 @media only screen and (max-width: 650px) {
   header .right-side {
-    flex-direction: column; /* stack buttons vertically */
+    flex-direction: column;
     align-items: center;
   }
 
   header .right-side .nav-link-wrapper a {
     display: block;
-    width: 80%; /* make buttons wide */
+    width: 80%;
     font-size: 14px;
-    margin: 8px 0; /* reduce margin for tighter stacking */
+    margin: 8px 0;
     padding: 12px;
     border-radius: 20px;
   }
@@ -415,17 +369,18 @@ header .right-side .nav-link-wrapper a:hover::after {
 
 @media only screen and (max-width: 404px) {
   header .right-side .nav-link-wrapper a {
-    width: 90%; /* take almost full width */
-    font-size: 13px; /* smaller text for small phones */
+    width: 90%;
+    font-size: 13px;
     padding: 10px;
   }
 }
 
-
-
-/* Menu button (hidden on desktop) */
+/* ✅ Hamburger Menu */
 .menu-toggle {
   display: none;
+  position: absolute;
+  top: 15px;
+  right: 15px;
   background: linear-gradient(135deg, #006241, #00a862);
   color: #fff;
   border: none;
@@ -436,9 +391,9 @@ header .right-side .nav-link-wrapper a:hover::after {
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   transition: all 0.3s ease;
+  z-index: 999;
 }
 
-/* Desktop navigation */
 .nav-links {
   display: flex;
 }
@@ -459,28 +414,32 @@ header .right-side .nav-link-wrapper a:hover::after {
   transition: all 0.3s ease;
 }
 
-/* Hover effect */
 .nav-links a:hover {
   background: linear-gradient(135deg, #00a862, #006241);
   transform: translateY(-3px);
   box-shadow: 0 6px 14px rgba(0,0,0,0.25);
 }
 
-/* ---- MOBILE ---- */
+/* ---- Mobile Dropdown ---- */
 @media only screen and (max-width: 768px) {
   .menu-toggle {
     display: block;
   }
 
   .nav-links {
-    display: none;        /* hidden by default */
+    display: none;
     flex-direction: column;
-    width: 100%;
-    margin-top: 10px;
+    background: white;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    border-radius: 8px;
   }
 
   .nav-links.active {
-    display: flex;        /* show when active */
+    display: flex;
   }
 
   .nav-links a {
