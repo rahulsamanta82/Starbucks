@@ -346,7 +346,6 @@ header .right-side .nav-link-wrapper a{
   }
 }
 
-
 /* 🔥 Updated Navigation Buttons */
 header .right-side .nav-link-wrapper a {
   position: relative;
@@ -362,6 +361,9 @@ header .right-side .nav-link-wrapper a {
   border-radius: 30px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap; /* prevent text from breaking */
 }
 
 /* Hover effect */
@@ -392,4 +394,98 @@ header .right-side .nav-link-wrapper a::after {
 
 header .right-side .nav-link-wrapper a:hover::after {
   transform: translateX(-50%) scaleX(1);
+}
+
+/* ✅ Mobile adjustments */
+@media only screen and (max-width: 650px) {
+  header .right-side {
+    flex-direction: column; /* stack buttons vertically */
+    align-items: center;
+  }
+
+  header .right-side .nav-link-wrapper a {
+    display: block;
+    width: 80%; /* make buttons wide */
+    font-size: 14px;
+    margin: 8px 0; /* reduce margin for tighter stacking */
+    padding: 12px;
+    border-radius: 20px;
+  }
+}
+
+@media only screen and (max-width: 404px) {
+  header .right-side .nav-link-wrapper a {
+    width: 90%; /* take almost full width */
+    font-size: 13px; /* smaller text for small phones */
+    padding: 10px;
+  }
+}
+
+
+
+/* Menu button (hidden on desktop) */
+.menu-toggle {
+  display: none;
+  background: linear-gradient(135deg, #006241, #00a862);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+/* Desktop navigation */
+.nav-links {
+  display: flex;
+}
+
+.nav-links a {
+  position: relative;
+  padding: 10px 20px;
+  margin: 10px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(135deg, #006241, #00a862);
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.nav-links a:hover {
+  background: linear-gradient(135deg, #00a862, #006241);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+
+/* ---- MOBILE ---- */
+@media only screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;        /* hidden by default */
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;        /* show when active */
+  }
+
+  .nav-links a {
+    width: 90%;
+    margin: 8px auto;
+    text-align: center;
+  }
 }
